@@ -14,10 +14,10 @@ public class jumping : MonoBehaviour {
 	void FixedUpdate () {
 		if(isJumping)
 		{
-			Vector2 newPosition = new Vector2(transform.position.x, transform.position.y + jumpCurve.Evaluate(jumpFrame/(jumpTime*60)));
+			Vector2 newPosition = new Vector2(transform.position.x, jumpCurve.Evaluate(jumpFrame/(jumpTime*60)));
 			GetComponent<Rigidbody2D>().MovePosition(newPosition);
 			jumpFrame++;
-			if(jumpCurve.length < jumpFrame)
+			if(jumpCurve.length < (jumpFrame/(jumpTime*60)))
 				isJumping = false;
 		}
 	}
@@ -31,8 +31,10 @@ public class jumping : MonoBehaviour {
 	bool isJumping = false;
 	int jumpFrame;
 	float jumpTime = 1;
+	Vector2 initialposition;
 	public void startJumping()
 	{
+		initialposition = transform.position;
 		isJumping = true;
 		jumpFrame = 0;
 	}
