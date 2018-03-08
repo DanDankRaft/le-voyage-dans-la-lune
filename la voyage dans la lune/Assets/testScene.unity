@@ -319,11 +319,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 990696465}
-  - component: {fileID: 990696468}
   - component: {fileID: 990696467}
   - component: {fileID: 990696466}
-  - component: {fileID: 990696469}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leg collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,27 +341,7 @@ Transform:
   m_Father: {fileID: 1833937952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &990696466
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 990696464}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &990696467
+--- !u!114 &990696466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -374,9 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9b9ae03af5c73499eefb4d092505e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collidedObjects: []
-  colliderCount: 0
---- !u!61 &990696468
+  isGrounded: 0
+--- !u!61 &990696467
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -385,10 +362,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0007047616, y: -0.09789596}
+  m_Offset: {x: -0.00004544109, y: -0.10615283}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -399,21 +376,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.043142803, y: 0.0037737936}
+  m_Size: {x: 0.099881366, y: 0.0077277496}
   m_EdgeRadius: 0
---- !u!114 &990696469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 990696464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9b9ae03af5c73499eefb4d092505e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collidedObjects: []
-  colliderCount: 0
 --- !u!1 &1696980687
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +489,6 @@ GameObject:
   - component: {fileID: 1833937954}
   - component: {fileID: 1833937953}
   - component: {fileID: 1833937955}
-  - component: {fileID: 1833937950}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -533,19 +496,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1833937950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1833937949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8517aff3c792e4b95f460287be2580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collidedObjects: []
-  colliderCount: 0
 --- !u!212 &1833937951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -636,7 +586,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.003453808, y: 0.0058087856}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -647,7 +597,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0930924, y: 0.18838245}
+  m_Size: {x: 0.1, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &1833937955
 MonoBehaviour:
@@ -666,25 +616,25 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 8
-      tangentMode: 69
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
     - serializedVersion: 2
       time: 0.25
-      value: 2
+      value: 1.0006099
       inSlope: 0.0021874022
       outSlope: 0.0021874022
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.49783325
-      value: 0.043670654
-      inSlope: -7.893732
-      outSlope: 0
-      tangentMode: 69
+      time: 0.5
+      value: 0
+      inSlope: -2.2405362
+      outSlope: -2.2405362
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  speed: 30
+  speed: 15
   gravity: 10
   isJumping: 0
   jumpFrame: 0

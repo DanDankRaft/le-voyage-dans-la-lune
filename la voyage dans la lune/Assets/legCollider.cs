@@ -2,10 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class legCollider : colliderCounter {
+public class legCollider : MonoBehaviour {
 
-    void OnCollisionEnter2D(Collision2D col)
+    public bool isGrounded = false;
+    BoxCollider2D box;
+    Vector2 min;
+    Vector2 max;
+    void Start()
     {
-        Debug.Log(col.gameObject.name);
+        box = GetComponent<BoxCollider2D>();
+    }
+    void FixedUpdate()
+    {
+        box.enabled = true;
+        min = box.bounds.min;
+        max = box.bounds.max;
+        box.enabled = false;
+
+        isGrounded = Physics2D.OverlapArea(min, max);
+        Debug.Log(Physics2D.OverlapArea(min, max).name);
+
+        //Debug.Log(min);
+        //Debug.Log(max);
     }
 }

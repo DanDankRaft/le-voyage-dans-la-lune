@@ -12,10 +12,13 @@ public class movement : MonoBehaviour {
 	//getting player input
 	void Update()
 	{
-		if(Input.GetKeyDown("space") && GetComponentInChildren<legCollider>().colliderCount >= 1)
+		if(Input.GetKeyDown("space"))
 			startJumping();
 		
-		movementAxis = Input.GetAxis("Horizontal");
+		if(isJumping)
+			movementAxis = Input.GetAxis("Horizontal");
+		else
+			movementAxis = Input.GetAxisRaw("Horizontal");
 	}
 
 	Rigidbody2D playerRigidbody;
@@ -25,6 +28,7 @@ public class movement : MonoBehaviour {
 	[SerializeField] public float gravity;
 
 	void FixedUpdate () {
+		//jumping
 		if(isJumping)
 		{
 			jumpDistance = jumpCurve.Evaluate(jumpFrame/(jumpTime*60)) - jumpCurve.Evaluate((jumpFrame - 1)/(jumpTime*60));
