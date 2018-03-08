@@ -12,7 +12,7 @@ public class movement : MonoBehaviour {
 	//getting player input
 	void Update()
 	{
-		if(Input.GetKeyDown("space"))
+		if(Input.GetKeyDown("space") && GetComponentInChildren<legCollider>().isGrounded)
 			startJumping();
 		
 		if(isJumping)

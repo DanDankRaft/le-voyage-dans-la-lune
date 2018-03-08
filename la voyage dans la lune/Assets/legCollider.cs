@@ -20,9 +20,5 @@ public class legCollider : MonoBehaviour {
         box.enabled = false;
 
         isGrounded = Physics2D.OverlapArea(min, max);
-        Debug.Log(Physics2D.OverlapArea(min, max).name);
-
-        //Debug.Log(min);
-        //Debug.Log(max);
     }
 }
