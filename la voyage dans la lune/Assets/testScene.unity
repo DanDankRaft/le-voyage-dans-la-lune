@@ -547,7 +547,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1833937949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.44, y: -0.03, z: 0}
+  m_LocalPosition: {x: 7.9, y: 10.8, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 990696465}
@@ -610,6 +610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e912aafd277a0954a94c1cc1deb8d134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 15
+  isGrounded: 0
+  isJumping: 0
+  isFalling: 0
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -634,10 +638,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  speed: 15
-  gravity: 10
-  isJumping: 0
-  jumpFrame: 0
+  gravity: 0
+  jumpVertex: {x: 30, y: 1.5}
+  fallTime: 0
 --- !u!1 &1853002957
 GameObject:
   m_ObjectHideFlags: 0
